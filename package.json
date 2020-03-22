@@ -17,6 +17,10 @@
   },
   "homepage": "https://github.com/lpfloyd/ERC20#readme",
   "dependencies": {
-    "@openzeppelin/cli": "^2.7.2"
+    "@openzeppelin/cli": "^2.7.2",
+    "@openzeppelin/upgrades": "^2.7.2"
+  },
+  "devDependencies": {
+    "@openzeppelin/contracts": "^2.5.0"
   }
 }

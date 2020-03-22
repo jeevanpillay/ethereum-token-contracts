@@ -13,6 +13,9 @@ interface ICoin {
   // mint new coins and allocate them to addresses.
   function mint(address receiver, uint amount) external;
 
+  // Returs the amount of token owned by `account`.
+  function balanceOf(address account) external view returns (uint);
+
   // Emitted when an `amount` allocated from one address to another.
   event Sent(address from, address to, uint amount);
 
