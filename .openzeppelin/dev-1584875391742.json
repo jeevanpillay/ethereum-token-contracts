@@ -101,28 +101,7 @@
   "proxies": {
     "erc20/Coin": [
       {
-        "address": "0xe982E462b094850F12AF94d21D470e21bE9D0E9C",
-        "version": "1.0.0",
-        "implementation": "0xA94B7f0465E98609391C623d0560C5720a3f2D33",
-        "admin": "0x5b1869D9A4C187F2EAa108f3062412ecf0526b24",
-        "kind": "Upgradeable"
-      },
-      {
-        "address": "0x59d3631c86BbE35EF041872d502F218A39FBa150",
-        "version": "1.0.0",
-        "implementation": "0xA94B7f0465E98609391C623d0560C5720a3f2D33",
-        "admin": "0x5b1869D9A4C187F2EAa108f3062412ecf0526b24",
-        "kind": "Upgradeable"
-      },
-      {
-        "address": "0x0290FB167208Af455bB137780163b7B7a9a10C16",
-        "version": "1.0.0",
-        "implementation": "0xA94B7f0465E98609391C623d0560C5720a3f2D33",
-        "admin": "0x5b1869D9A4C187F2EAa108f3062412ecf0526b24",
-        "kind": "Upgradeable"
-      },
-      {
-        "address": "0x630589690929E9cdEFDeF0734717a9eF3Ec7Fcfe",
+        "address": "0x4bf749ec68270027C5910220CEAB30Cc284c7BA2",
         "version": "1.0.0",
         "implementation": "0xA94B7f0465E98609391C623d0560C5720a3f2D33",
         "admin": "0x5b1869D9A4C187F2EAa108f3062412ecf0526b24",
