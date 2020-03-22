@@ -1,0 +1,22 @@
+{
+  "name": "erc20",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lpfloyd/ERC20.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lpfloyd/ERC20/issues"
+  },
+  "homepage": "https://github.com/lpfloyd/ERC20#readme",
+  "dependencies": {
+    "@openzeppelin/cli": "^2.7.2"
+  }
+}
