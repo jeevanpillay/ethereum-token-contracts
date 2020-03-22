@@ -1,0 +1,79 @@
+{
+  "contracts": {
+    "Coin": {
+      "address": "0xe78A0F7E598Cc8b0Bb87894B0F60dD2a88d6a8Ab",
+      "constructorCode": "608060405234801561001057600080fd5b5061059a806100206000396000f3fe",
+      "bodyBytecodeHash": "d0f4bb81b8e8844464c14b1ee16fe03a4e7dcf0e4ee8becf01097db6b0973528",
+      "localBytecodeHash": "236a2c8688b7b6a2588dbc0b074d10c554c563efa6bee5a635a0c37ca800a367",
+      "deployedBytecodeHash": "236a2c8688b7b6a2588dbc0b074d10c554c563efa6bee5a635a0c37ca800a367",
+      "types": {
+        "t_address": {
+          "id": "t_address",
+          "kind": "elementary",
+          "label": "address"
+        },
+        "t_uint256": {
+          "id": "t_uint256",
+          "kind": "elementary",
+          "label": "uint256"
+        },
+        "t_mapping<t_uint256>": {
+          "id": "t_mapping<t_uint256>",
+          "valueType": "t_uint256",
+          "label": "mapping(key => uint256)",
+          "kind": "mapping"
+        }
+      },
+      "storage": [
+        {
+          "contract": "Coin",
+          "path": "contracts/Coin.sol",
+          "label": "minter",
+          "astId": 6,
+          "type": "t_address",
+          "src": "280:21:0"
+        },
+        {
+          "contract": "Coin",
+          "path": "contracts/Coin.sol",
+          "label": "balances",
+          "astId": 10,
+          "type": "t_mapping<t_uint256>",
+          "src": "355:34:0"
+        },
+        {
+          "contract": "Coin",
+          "path": "contracts/Coin.sol",
+          "label": "rate",
+          "astId": 12,
+          "type": "t_uint256",
+          "src": "437:17:0"
+        }
+      ],
+      "warnings": {
+        "hasConstructor": false,
+        "hasSelfDestruct": false,
+        "hasDelegateCall": false,
+        "hasInitialValuesInDeclarations": false,
+        "uninitializedBaseContracts": []
+      }
+    }
+  },
+  "solidityLibs": {},
+  "proxies": {
+    "erc20/Coin": [
+      {
+        "address": "0xCfEB869F69431e42cdB54A4F4f105C19C080A601",
+        "version": "1.0.0",
+        "implementation": "0xe78A0F7E598Cc8b0Bb87894B0F60dD2a88d6a8Ab",
+        "admin": "0x5b1869D9A4C187F2EAa108f3062412ecf0526b24",
+        "kind": "Upgradeable"
+      }
+    ]
+  },
+  "manifestVersion": "2.2",
+  "version": "1.0.0",
+  "proxyAdmin": {
+    "address": "0x5b1869D9A4C187F2EAa108f3062412ecf0526b24"
+  }
+}
