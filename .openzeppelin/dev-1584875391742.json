@@ -1,11 +1,11 @@
 {
   "contracts": {
     "Coin": {
-      "address": "0x9561C133DD8580860B6b7E504bC5Aa500f0f06a7",
-      "constructorCode": "608060405234801561001057600080fd5b5061078b806100206000396000f3fe",
-      "bodyBytecodeHash": "844b1a00ad62b93750204ca86ee8e91f8a8dd8f6354c72ec85fc414d06dc3140",
-      "localBytecodeHash": "8a62a9eb93dd9b84cec1c88fb2e46e26f9389db37a87a604f5f82545eacbefe5",
-      "deployedBytecodeHash": "8a62a9eb93dd9b84cec1c88fb2e46e26f9389db37a87a604f5f82545eacbefe5",
+      "address": "0xA94B7f0465E98609391C623d0560C5720a3f2D33",
+      "constructorCode": "608060405234801561001057600080fd5b50610852806100206000396000f3fe",
+      "bodyBytecodeHash": "49ec1155072772f8036807e98efb3609374c0c51a4be76c80b5ca3596640e7a4",
+      "localBytecodeHash": "6c4895fabcd3cbd0d058804c01a9ace85a237249e50c7a127ad1ffa37882ca2b",
+      "deployedBytecodeHash": "6c4895fabcd3cbd0d058804c01a9ace85a237249e50c7a127ad1ffa37882ca2b",
       "types": {
         "t_bool": {
           "id": "t_bool",
@@ -67,7 +67,7 @@
           "label": "minter",
           "astId": 82,
           "type": "t_address",
-          "src": "401:21:1"
+          "src": "356:21:1"
         },
         {
           "contract": "Coin",
@@ -75,15 +75,15 @@
           "label": "_balances",
           "astId": 86,
           "type": "t_mapping<t_uint256>",
-          "src": "476:43:1"
+          "src": "431:43:1"
         },
         {
           "contract": "Coin",
           "path": "contracts/Coin.sol",
-          "label": "_rate",
+          "label": "_tokenSupply",
           "astId": 88,
           "type": "t_uint256",
-          "src": "567:18:1"
+          "src": "520:25:1"
         }
       ],
       "warnings": {
@@ -103,21 +103,28 @@
       {
         "address": "0xe982E462b094850F12AF94d21D470e21bE9D0E9C",
         "version": "1.0.0",
-        "implementation": "0x9561C133DD8580860B6b7E504bC5Aa500f0f06a7",
+        "implementation": "0xA94B7f0465E98609391C623d0560C5720a3f2D33",
         "admin": "0x5b1869D9A4C187F2EAa108f3062412ecf0526b24",
         "kind": "Upgradeable"
       },
       {
         "address": "0x59d3631c86BbE35EF041872d502F218A39FBa150",
         "version": "1.0.0",
-        "implementation": "0x9561C133DD8580860B6b7E504bC5Aa500f0f06a7",
+        "implementation": "0xA94B7f0465E98609391C623d0560C5720a3f2D33",
         "admin": "0x5b1869D9A4C187F2EAa108f3062412ecf0526b24",
         "kind": "Upgradeable"
       },
       {
         "address": "0x0290FB167208Af455bB137780163b7B7a9a10C16",
         "version": "1.0.0",
-        "implementation": "0x9561C133DD8580860B6b7E504bC5Aa500f0f06a7",
+        "implementation": "0xA94B7f0465E98609391C623d0560C5720a3f2D33",
+        "admin": "0x5b1869D9A4C187F2EAa108f3062412ecf0526b24",
+        "kind": "Upgradeable"
+      },
+      {
+        "address": "0x630589690929E9cdEFDeF0734717a9eF3Ec7Fcfe",
+        "version": "1.0.0",
+        "implementation": "0xA94B7f0465E98609391C623d0560C5720a3f2D33",
         "admin": "0x5b1869D9A4C187F2EAa108f3062412ecf0526b24",
         "kind": "Upgradeable"
       }

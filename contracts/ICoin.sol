@@ -16,6 +16,9 @@ interface ICoin {
   // Returs the amount of token owned by `account`.
   function balanceOf(address account) external view returns (uint);
 
+  // Returns the token supply of the Coin
+  function tokenSupply() external view returns (uint);
+
   // Emitted when an `amount` allocated from one address to another.
   event Sent(address from, address to, uint amount);
 
