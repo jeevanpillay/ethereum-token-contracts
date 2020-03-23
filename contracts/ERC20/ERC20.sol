@@ -44,6 +44,30 @@ contract ERC20 is IERC20 {
   }
 
   /**
+   * Moves tokens `amount` from `sender` to `recipient`.
+   *
+   * This is internal function is equivalent to {transfer}, and can be used to
+   * e.g. implement automatic token fees, slashing mechanisms, etc.
+   *
+   * Emits a {Transfer} event.
+   *
+   * Requirements:
+   *
+   * - `sender` cannot be the zero address.
+   * - `recipient` cannot be the zero address.
+   * - `sender` must have a balance of at least `amount`.
+   */
+  function _transfer(address sender, address recipient, uint256 amount) internal virtual {
+    require(sender != address(0), "ERC20: transfer from zero address");
+    require(recipient != address(0), "ERC: transfer to zero address");
+
+    // TODO: make this safe
+    _balances[sender] -= amount;
+    _balances[recipient] += amount;
+    emit Transfer(sender, recipient, amount);
+  }
+
+  /**
     * Move `amount` tokens from `sender` to `recipient` based on the allowance.
     * `amount` is deducated from the caller's allowance.
     *
