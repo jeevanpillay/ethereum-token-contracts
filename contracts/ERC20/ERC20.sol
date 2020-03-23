@@ -63,9 +63,9 @@ contract ERC20 is IERC20, Context {
     require(sender != address(0), "ERC20: transfer from zero address");
     require(recipient != address(0), "ERC: transfer to zero address");
 
-    // TODO: make this safe
-    _balances[sender] -= amount;
-    _balances[recipient] += amount;
+    _balances[sender] = _balances[sender].sub(amount, "ERC20: transfer amount exceeds balance");
+    _balances[recipient] += _balances[recipient].add(amount);
+
     emit Transfer(sender, recipient, amount);
   }
 
@@ -75,10 +75,12 @@ contract ERC20 is IERC20, Context {
     *
     * Returns a bool indicating whether the transfer has succeeded
     *
-    * Emits a { Transfer } event
+    * Emits a {Transfer} event
     */
   function transferFrom(address sender, address recipient, uint256 amount) external override returns (bool) {
-
+    _transfer(sender, recipient, amount);
+    _approve(sender, _msgSender(), _allowances[sender][_msgSender()].sub(amount, "ERC20: transfer amount exceeds allowance")); // This line deducts the allowed amount from the allocate msg.sender allowance from sender.
+    return true;
   }
 
   /**
@@ -97,7 +99,8 @@ contract ERC20 is IERC20, Context {
     * Emits an {Approval} event
     */
   function approve(address spender, uint256 amount) external override returns (bool) {
-
+    _approve(_msgSender(), spender, amount);
+    return true;
   }
 
 
