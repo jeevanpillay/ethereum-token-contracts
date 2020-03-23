@@ -3,13 +3,14 @@ pragma solidity ^0.6.0;
 
 import "./IERC20.sol";
 import "../math/SafeMath.sol";
+import "../GSN/Context.sol";
 
 /**
   * Implementation of the {IERC20} interface.
   *
   * Defined at https://eips.ethereum.org/EIPS/eip-20
   */
-contract ERC20 is IERC20 {
+contract ERC20 is IERC20, Context {
   using SafeMath for uint256;
 
   mapping (address => uint256) private _balances;
@@ -40,7 +41,8 @@ contract ERC20 is IERC20 {
     * Emits a { Transfer } event
     */
   function transfer(address recipient, uint256 amount) external override returns (bool) {
-
+    _transfer(_msgSender(), recipient, amount);
+    return true;
   }
 
   /**
@@ -98,6 +100,29 @@ contract ERC20 is IERC20 {
 
   }
 
+
+  /**
+   * Sets `amount` as the allowance of `spender` over the `owner`s tokens.
+   *
+   * This is internal function is equivalent to `approve`, and can be used to
+   * e.g. set automatic allowances for certain subsystems, etc.
+   *
+   * Emits an {Approval} event.
+   *
+   * Requirements:
+   *
+   * - `owner` cannot be the zero address.
+   * - `spender` cannot be the zero address.
+   */
+  function _approve(address owner, address spender, uint256 amount) internal virtual {
+    require(owner != address(0), "ERC20: approve from zero address");
+    require(spender != address(0), "ERC: approve to zero address");
+
+    _allowances[owner][spender] = amount;
+
+    emit Approval(owner, spender, amount);
+  }
+
   /**
     * Returns the remaining number of tokens that `spender` will be allowed
     * to spend on behave of the `owner` through the {transferFrom} function.
@@ -107,20 +132,6 @@ contract ERC20 is IERC20 {
     * This value changes when {approve} or {transferFrom} are called.
     */
   function allowance(address owner, address spender) external view override returns (uint256) {
-
+    return _allowances[owner][spender];
   }
-
-  /**
-   * Emitted when `value` tokens are moved from one account (`from`) to
-   * another (`to`).
-   *
-   * Note that `value` may be zero.
-   */
-  event Transfer(address indexed from, address indexed to, uint256 value);
-
-  /**
-   * @dev Emitted when the allowance of a `spender` for an `owner` is set by
-   * a call to {approve}. `value` is the new allowance.
-   */
-  event Approval(address indexed owner, address indexed spender, uint256 value);
 }
