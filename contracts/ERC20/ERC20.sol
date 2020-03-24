@@ -22,14 +22,14 @@ contract ERC20 is IERC20, Context {
   /**
     * Returns the total amount of tokens in existence.
     */
-  function totalSupply() external view override returns (uint256) {
+  function totalSupply() public view override returns (uint256) {
     return _totalSupply;
   }
 
   /**
     * Returns the total amount of tokens owned by an `account`.
     */
-  function balanceOf(address account) external view override returns (uint256) {
+  function balanceOf(address account) public view override returns (uint256) {
     return _balances[account];
   }
 
@@ -62,6 +62,8 @@ contract ERC20 is IERC20, Context {
   function _transfer(address sender, address recipient, uint256 amount) internal virtual {
     require(sender != address(0), "ERC20: transfer from zero address");
     require(recipient != address(0), "ERC: transfer to zero address");
+
+    _beforeTokenTransfer(sender, recipient, amount);
 
     _balances[sender] = _balances[sender].sub(amount, "ERC20: transfer amount exceeds balance");
     _balances[recipient] += _balances[recipient].add(amount);
@@ -137,4 +139,39 @@ contract ERC20 is IERC20, Context {
   function allowance(address owner, address spender) external view override returns (uint256) {
     return _allowances[owner][spender];
   }
+
+  /**
+   * @dev Hook that is called before any transfer of tokens. This includes
+   * minting and burning.
+   *
+   * Calling conditions:
+   *
+   * - when `from` and `to` are both non-zero, `amount` of `from`'s tokens
+   * will be to transferred to `to`.
+   * - when `from` is zero, `amount` tokens will be minted for `to`.
+   * - when `to` is zero, `amount` of `from`'s tokens will be burned.
+   * - `from` and `to` are never both zero.
+   *
+   * To learn more about hooks, head to xref:ROOT:using-hooks.adoc[Using Hooks].
+   */
+   function _beforeTokenTransfer(address from, address to, uint256 amount) internal virtual {}
+
+   /** @dev Creates `amount` tokens and assigns them to `account`, increasing
+ * the total supply.
+ *
+ * Emits a {Transfer} event with `from` set to the zero address.
+ *
+ * Requirements
+ *
+ * - `to` cannot be the zero address.
+ */
+ function _mint(address account, uint256 amount) internal virtual {
+   require(account != address(0), "ERC20: mint to the zero address");
+
+   _beforeTokenTransfer(address(0), account, amount);
+
+   _totalSupply = _totalSupply.add(amount);
+   _balances[account] = _balances[account].add(amount);
+   emit Transfer(address(0), account, amount);
+ }
 }
