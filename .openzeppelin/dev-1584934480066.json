@@ -1,0 +1,155 @@
+{
+  "contracts": {
+    "Coin": {
+      "address": "0xe78A0F7E598Cc8b0Bb87894B0F60dD2a88d6a8Ab",
+      "constructorCode": "608060405234801561001057600080fd5b50610852806100206000396000f3fe",
+      "bodyBytecodeHash": "49ec1155072772f8036807e98efb3609374c0c51a4be76c80b5ca3596640e7a4",
+      "localBytecodeHash": "6c4895fabcd3cbd0d058804c01a9ace85a237249e50c7a127ad1ffa37882ca2b",
+      "deployedBytecodeHash": "6c4895fabcd3cbd0d058804c01a9ace85a237249e50c7a127ad1ffa37882ca2b",
+      "types": {
+        "t_bool": {
+          "id": "t_bool",
+          "kind": "elementary",
+          "label": "bool"
+        },
+        "t_uint256": {
+          "id": "t_uint256",
+          "kind": "elementary",
+          "label": "uint256"
+        },
+        "t_array:50<t_uint256>": {
+          "id": "t_array:50<t_uint256>",
+          "valueType": "t_uint256",
+          "length": "50",
+          "kind": "array",
+          "label": "uint256[50]"
+        },
+        "t_address": {
+          "id": "t_address",
+          "kind": "elementary",
+          "label": "address"
+        },
+        "t_mapping<t_uint256>": {
+          "id": "t_mapping<t_uint256>",
+          "valueType": "t_uint256",
+          "label": "mapping(key => uint256)",
+          "kind": "mapping"
+        }
+      },
+      "storage": [
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "initialized",
+          "astId": 4,
+          "type": "t_bool",
+          "src": "757:24:0"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "initializing",
+          "astId": 6,
+          "type": "t_bool",
+          "src": "876:25:0"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "______gap",
+          "astId": 71,
+          "type": "t_array:50<t_uint256>",
+          "src": "1982:29:0"
+        },
+        {
+          "contract": "Coin",
+          "path": "contracts/Basic/Coin.sol",
+          "label": "minter",
+          "astId": 82,
+          "type": "t_address",
+          "src": "356:21:1"
+        },
+        {
+          "contract": "Coin",
+          "path": "contracts/Basic/Coin.sol",
+          "label": "_balances",
+          "astId": 86,
+          "type": "t_mapping<t_uint256>",
+          "src": "431:43:1"
+        },
+        {
+          "contract": "Coin",
+          "path": "contracts/Basic/Coin.sol",
+          "label": "_tokenSupply",
+          "astId": 88,
+          "type": "t_uint256",
+          "src": "520:25:1"
+        }
+      ],
+      "warnings": {
+        "hasConstructor": false,
+        "hasSelfDestruct": false,
+        "hasDelegateCall": false,
+        "hasInitialValuesInDeclarations": false,
+        "uninitializedBaseContracts": []
+      }
+    },
+    "ERC20": {
+      "address": "0x5b1869D9A4C187F2EAa108f3062412ecf0526b24",
+      "constructorCode": "6080604052610b97806100136000396000f3fe",
+      "bodyBytecodeHash": "809d2040719dc02170e38dc8ccfe65511dc2035549d00581069cfaf93fc0c237",
+      "localBytecodeHash": "0b77add6904bd7912ac7f9dbbe8b6926ec6f1cb8568245b58c6179387f53f078",
+      "deployedBytecodeHash": "0b77add6904bd7912ac7f9dbbe8b6926ec6f1cb8568245b58c6179387f53f078",
+      "types": {
+        "t_uint256": {
+          "id": "t_uint256",
+          "kind": "elementary",
+          "label": "uint256"
+        },
+        "t_mapping<t_uint256>": {
+          "id": "t_mapping<t_uint256>",
+          "valueType": "t_uint256",
+          "label": "mapping(key => uint256)",
+          "kind": "mapping"
+        }
+      },
+      "storage": [
+        {
+          "contract": "ERC20",
+          "path": "contracts/ERC20/ERC20.sol",
+          "label": "_balances",
+          "astId": 272,
+          "type": "t_mapping<t_uint256>",
+          "src": "313:46:3"
+        },
+        {
+          "contract": "ERC20",
+          "path": "contracts/ERC20/ERC20.sol",
+          "label": "_allowances",
+          "astId": 278,
+          "type": "t_mapping<t_uint256>",
+          "src": "364:69:3"
+        },
+        {
+          "contract": "ERC20",
+          "path": "contracts/ERC20/ERC20.sol",
+          "label": "_totalSupply",
+          "astId": 280,
+          "type": "t_uint256",
+          "src": "438:28:3"
+        }
+      ],
+      "warnings": {
+        "hasConstructor": false,
+        "hasSelfDestruct": false,
+        "hasDelegateCall": false,
+        "hasInitialValuesInDeclarations": false,
+        "uninitializedBaseContracts": []
+      }
+    }
+  },
+  "solidityLibs": {},
+  "proxies": {},
+  "manifestVersion": "2.2",
+  "version": "1.0.0"
+}
